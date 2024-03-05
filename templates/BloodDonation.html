@@ -39,7 +39,7 @@
   </div>
 </nav>
 <div class="position-relative">
-  <img src="{% static 'image/bloodcover.webp' %}"  alt="Image" height="450px" width="100%">
+  <img src="{% static 'image/mybloodcover.avif' %}"  alt="Image" height="500px" width="100%">
   <div class="position-absolute bottom-50 start-20  translate-left">
 
   </div>
@@ -50,7 +50,7 @@
 <br>
      <div class="text-center">
     <a href="" class="btn btn-dark">REGISTER AS DONOR</a>
-    <a href="" class="btn btn-danger">FIND A BLOOD DONOR</a>
+    <a href="/donar" class="btn btn-danger">FIND A BLOOD DONOR</a>
 </div>
 <br>
 
@@ -87,11 +87,11 @@
     </div>
   </div>
   <div class="row mb-4  justify-content-center">
-    <div class="col-md-6">
-      <div data-mdb-input-init class="form-outline">
-        <input type="text" id="form6Example3" name="city" class="form-control" />
-        <label class="form-label" for="form6Example3">CITY</label>
-      </div>
+<!--    <div class="col-md-6">-->
+<!--      <div data-mdb-input-init class="form-outline">-->
+<!--        <input type="text" id="form6Example3" name="city" class="form-control" />-->
+<!--        <label class="form-label" for="form6Example3">CITY</label>-->
+<!--      </div>-->
     </div>
     <div class="col">
       <div data-mdb-input-init class="form-outline">
@@ -142,7 +142,15 @@
       </div>
     </div>
   </div>
-  --
+  <label>Choose City</label>
+<select id="city" name="city" >
+        {% for x in dataa %}
+
+    <option value="{{x.City_id}}">{{x.City_Name}} </option>
+        {% endfor %}
+    </select>
+
+
 <!--      <div data-mdb-input-init class="form-outline">-->
 <!--        <input type="text" id="form6Example11" class="form-control" />-->
 <!--        <label class="form-label" for="form6Example1">Age</label>-->
@@ -265,14 +273,7 @@
         <div class="col"><img src="{% static 'image/blood6.jpg' %}" class="d-block w-100" alt="Slide 6" ></div>
       </div>
     </div>
-    <!-- Third Row of Images -->
-<!--    <div class="carousel-item">-->
-<!--      <div class="row">-->
-<!--        <div class="col"><img src="{% static 'image/amb3.webp' %}" class="d-block w-100" alt="Slide 7" ></div>-->
-<!--        <div class="col"><img src="{% static 'image/spence.jpg' %}" class="d-block w-100" alt="Slide 9" ></div>-->
-<!--        <div class="col"><img src="{% static 'image/amb2.webp' %}" class="d-block w-100" alt="Slide 8" ></div>-->
-<!--      </div>-->
-<!--    </div>-->
+
   </div>
   <br><br>
   <!-- Previous and Next buttons -->

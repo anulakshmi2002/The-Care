@@ -56,12 +56,18 @@
     <div class="card">
 
 
-      <img src="../media/{{ x.images }}" class="card-img-top" >
+      <img src="../media/{{ x.images }}" class="card-img-top" height="400px">
 
 
       <div class="card-body">
-        <h5 class="card-title">{{x.Camp_name}}</h5>
-        <a href="/campp/{{x.Camp_id}}">REGISTER</a>
+        <h5 class="card-title">Name:{{x.Camp_name}}</h5>
+        <h5 class="card-text">Doctor:{{x.Doctor_id.Doctor_name}}</h5>
+        <h5 class="card-text">Department:{{x.Doctor_id.Department_name}}</h5>
+         <h5 class="card-text">Place:{{x.Place}}</h5>
+
+        <h5 class="card-text">Start Date & Time:{{x.Start_Date}}</h5>
+        <h5 class="card-text">  End Date & Time:{{x.End_Date}}</h5>
+        <a href="/campp/{{x.Camp_id}}" class="btn btn-success">REGISTER</a>
 
 
 

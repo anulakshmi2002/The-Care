@@ -14,37 +14,63 @@
 
 <body>
 
- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+ <nav class="navbar navbar-expand-lg navbar-light bg-white">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">TheCare</a>
+     <a class="navbar-brand" href="#">
+      <img src="{% static 'image/logoo.avif' %}" alt="Navbar Logo" height="30" class="d-inline-block align-text-top">
+      TheCare
+    </a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <li class="nav-item  ">
+          <a class="nav-link active" aria-current="page" href="#" style="color: green;">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+        <li class="nav-item  ">
+          <a class="nav-link" href="/driver">Driver</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+        <li class="nav-item  ">
+          <a class="nav-link" href="/hospital">Hospital</a>
+        </li>
+          <li class="nav-item ">
+          <a class="nav-link" href="/camp">Camp</a>
+        </li>
+          <li class="nav-item ">
+          <a class="nav-link" href="/login">Login</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown link
+            Donation
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="blood">Blood Donation</a></li>
+            <li><a class="dropdown-item" href="#">Food Donation</a></li>
+            <li><a class="dropdown-item" href="#">Money Donation</a></li>
           </ul>
         </li>
       </ul>
     </div>
   </div>
+
+
+     </div>
+
+
 </nav>
+   <div class="position-relative cover-container">
+  <!-- This is an image tag with a source pointing to a static file -->
+  <img src="{% static 'image/freecamp.png' %}" alt="Image"  width="100%" height="500px">
+  <!-- This div contains a quote positioned absolutely at the bottom and center of the image -->
+  <div class="position-absolute bottom-50 start-50 translate-left">
+    <!-- This is the quote inside an <h4> element -->
+
+  </div>
+</div>
+
  <BR>
 
  <BR>
@@ -56,12 +82,12 @@
     <div class="card">
 
 
-      <img src="../media/{{ x.images }}" class="card-img-top" >
+      <img src="../media/{{ x.images }}" class="card-img-top" height="300px" >
 
 
       <div class="card-body">
         <h5 class="card-title">{{x.Camp_name}}</h5>
-        <a href="/campreg/{{x.Camp_id}}">REGISTER</a>
+        <a href="/campreg/{{x.Camp_id}}" class="btn btn-success">CHECK DETAILS</a>
 
 
 

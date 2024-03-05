@@ -37,6 +37,7 @@
       </ul>
 
   </div>
+    </div>
 </nav>
 <div class="position-relative">
   <img src="{% static 'image/fooddonation1.png' %}"  alt="Image" height="450px" width="100%">
@@ -53,195 +54,51 @@
 </div>
 <br>
 
+<div class="container">
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  {% for x in data %}
 
-<form method="POST" enctype="multipart/form-data" >
-  {% csrf_token %}
-  <!-- 2 column grid layout with text inputs for the first and last names -->
-  <div class="row mb-4  justify-content-center">
-    <div class="col-md-6">
-      <div data-mdb-input-init class="form-outline">
-        <input type="text" id="form6Example11" name="des" class="form-control" />
-        <label class="form-label" for="form6Example11">Small description About blood donation</label>
-      </div>
-    </div>
-    <div class="col">
-      <div data-mdb-input-init class="form-outline">
-        <input type="text" id="form6Example12" name="contact" class="form-control" />
-        <label class="form-label" for="form6Example12">Secondary contact number</label>
-      </div>
-    </div>
-  </div>
-  <div class="row mb-4  justify-content-center">
-    <div class="col-md-6">
-      <div data-mdb-input-init class="form-outline">
-        <input type="text"  name="gender" class="form-control" />
-        <label class="form-label" >Gender</label>
-      </div>
-    </div>
-    <div class="col">
-      <div data-mdb-input-init class="form-outline">
-        <input type="text" id="form6Example2" name="age" class="form-control" />
-        <label class="form-label" for="form6Example2">Age</label>
-      </div>
-    </div>
-  </div>
-  <div class="row mb-4  justify-content-center">
-    <div class="col-md-6">
-      <div data-mdb-input-init class="form-outline">
-        <input type="text" id="form6Example3" name="city" class="form-control" />
-        <label class="form-label" for="form6Example3">CITY</label>
-      </div>
-    </div>
-    <div class="col">
-      <div data-mdb-input-init class="form-outline">
-        <input type="text" id="form6Example4" name="address" class="form-control" />
-        <label class="form-label" for="form6Example2">Address</label>
+
+  <div class="col">
+    <div class="card">
+
+
+
+      <img src="../media/{{ x.Image }}" class="card-img-top" height="350px" >
+
+      <div class="card-body" style="text-align:center;">
+        <h2 class="card-title">{{x.Donation_Name}}</h2>
+        <h6 class="card-text">{{x.Donation_description}}</h6>
+        <h6 class="card-text">{{x.Start_date}}</h6>
+        <h6 class="card-text">{{x.End_date}}</h6>
+        <h6 class="card-text">{{x.City_id.City_Name}},{{x.City_id.District_id.District_Name}}</h6>
+
+
+
+
+
+          <a href="/foodreg/{{x.FoodDonation_id }}">CHECK</a>
+
+
+
+
+
+
       </div>
     </div>
   </div>
-  <div class="row mb-4  justify-content-center">
-    <div class="col-md-6">
-      <div data-mdb-input-init class="form-outline">
-        <input type="text" id="form6Example7" name="bloodgroup" class="form-control" />
-        <label class="form-label" for="form6Example7">Blood Group</label>
-      </div>
-    </div>
-    <div class="col">
-      <div data-mdb-input-init class="form-outline">
-        <input type="text" id="form6Example8" name="weight" class="form-control" />
-        <label class="form-label" for="form6Example8">Weight</label>
-      </div>
-    </div>
-  </div>
-  <div class="row mb-4  justify-content-center">
-    <div class="col-md-6">
-      <div data-mdb-input-init class="form-outline">
-        <input type="text" id="form6Example9" name="disease" class="form-control" />
-        <label class="form-label" for="form6Example9">Any Disease</label>
-      </div>
-    </div>
-    <div class="col">
-      <div data-mdb-input-init class="form-outline">
-        <input type="text" id="form6Example10" name="describe" class="form-control" />
-        <label class="form-label" for="form6Example2">Describe Disease</label>
-      </div>
-    </div>
-  </div>
-  <div class="row mb-4  justify-content-center">
-    <div class="col-md-6">
-      <div data-mdb-input-init class="form-outline">
-        <input type="text" id="form6Example13" name="proof" class="form-control" />
-        <label class="form-label" for="form6Example13">ID Proof</label>
-      </div>
-    </div>
-    <div class="col">
-      <div data-mdb-input-init class="form-outline">
-        <input type="file" id="form6Example14" name="proofimage" class="form-control" />
-        <label class="form-label" for="form6Example14">ID_Proof_Image</label>
-      </div>
-    </div>
-  </div>
-  --
-<!--      <div data-mdb-input-init class="form-outline">-->
-<!--        <input type="text" id="form6Example11" class="form-control" />-->
-<!--        <label class="form-label" for="form6Example1">Age</label>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="col">-->
-<!--      <div data-mdb-input-init class="form-outline">-->
-<!--        <input type="text" id="form6Example22" class="form-control" />-->
-<!--        <label class="form-label" for="form6Example2">Address</label>-->
-<!--      </div>-->
-<!--    </div>-->
-
-  <!-- Text input -->
-
-<!--  <div data-mdb-input-init class="form-outline">-->
-<!--    <input type="text" id="form6Example3" class="form-control" />-->
-<!--    <label class="form-label" for="form6Example3">Company name</label>-->
-<!--  </div>-->
-
-<!--  &lt;!&ndash; Text input &ndash;&gt;-->
-<!--  <div data-mdb-input-init class="form-outline mb-4">-->
-<!--    <input type="text" id="form6Example4" class="form-control" />-->
-<!--    <label class="form-label" for="form6Example4">Address</label>-->
-<!--  </div>-->
-
-<!--  &lt;!&ndash; Email input &ndash;&gt;-->
-<!--  <div data-mdb-input-init class="form-outline mb-4">-->
-<!--    <input type="email" id="form6Example5" class="form-control" />-->
-<!--    <label class="form-label" for="form6Example5">Email</label>-->
-<!--  </div>-->
-
-<!--  &lt;!&ndash; Number input &ndash;&gt;-->
-<!--  <div data-mdb-input-init class="form-outline mb-4">-->
-<!--    <input type="number" id="form6Example6" class="form-control" />-->
-<!--    <label class="form-label" for="form6Example6">Phone</label>-->
-<!--  </div>-->
-
-<!--  &lt;!&ndash; Message input &ndash;&gt;-->
-<!--  <div data-mdb-input-init class="form-outline mb-4">-->
-<!--    <textarea class="form-control" id="form6Example7" rows="4"></textarea>-->
-<!--    <label class="form-label" for="form6Example7">Additional information</label>-->
-<!--  </div>-->
-
-<!--  &lt;!&ndash; Checkbox &ndash;&gt;-->
-<!--  <div class="form-check d-flex justify-content-center mb-4">-->
-<!--    <input-->
-<!--      class="form-check-input me-2"-->
-<!--      type="checkbox"-->
-<!--      value=""-->
-<!--      id="form6Example8"-->
-<!--      checked-->
-<!--    />-->
-
-<!--  </div>-->
-
-<!--  &lt;!&ndash; Submit button &ndash;&gt;-->
-  <button data-mdb-ripple-init type="sumbit" class="btn btn-primary btn-block mb-4 ">REGISTER</button>
-</form>
-
-
-
-<br><br>
-
-
-<h4 style="text-align:center">Tips</h4>
-
-
-
-<p style="text-align:center">Here are some tips to put your mind at ease during the blood donation process</p>
-<br><br>
-<div class="card-group" style="width:90%">
-  <div class="card" style="margin-left:30px;">
-    <div class="card-body">
-      <h5 class="card-title text-center " >The day before</h5><br>
-      <p class="card-text" style="width:90%">* Have an iron-rich diet such as beans,spinach or meat,poultry</p>
-      <p class="card-text" style="width:90%">* Have proper sleep at least 8 hours.</p>
-      <p class="card-text" style="width:90%">* Include more liquids in your diet</p>
-
-
-    </div>
-  </div>
-  <div class="card" style="margin-left:30px;">
-    <div class="card-body">
-      <h5 class="card-title text-center">On the Donation day</h5>
-      <p class="card-text" style="width:90%">* Do your identify identification forms eg:driver's license</p>
-      <p class="card-text" style="width:90%">* Drink 2 cups of water before donating blood</p>
-      <p class="card-text" style="width:90%">*  Avoid fast food before donation</p>
-
-    </div>
-  </div>
-  <div class="card" style="margin-left:30px;">
-
-    <div class="card-body" >
-      <h5 class="card-title text-center">After the Donation</h5>
-      <p class="card-text" style="width:90%">* Reward your self with a snack as refreshment immediately</p>
-      <p class="card-text" style="width:90%">* Drink more liquids over a period of 24 hours</p>
-      <p class="card-text" style="width:90%">* Remove the bandage after few hours</p>
-    </div>
-  </div>
+  {% endfor %}
 </div>
+</div>
+
+
+
+
+
+<br><br>
+
+
+
 <BR>
 <BR>
 <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -249,9 +106,9 @@
     <!-- First Row of Images -->
     <div class="carousel-item active">
       <div class="row">
-         <div class="col"><img src="{% static 'image/blood7.jpg' %}" class="d-block w-100" alt="Slide 4" ></div>
-        <div class="col"><img src="{% static 'image/blood2.jpg' %}" class="d-block w-100" alt="Slide 5" ></div>
-        <div class="col"><img src="{% static 'image/blood3.jpg' %}" class="d-block w-100" alt="Slide 6" ></div>
+         <div class="col"><img src="{% static 'image/foodd1.jpg' %}" class="d-block w-100" alt="Slide 4" ></div>
+        <div class="col"><img src="{% static 'image/foodd2.jpeg' %}" class="d-block w-100" alt="Slide 5" ></div>
+        <div class="col"><img src="{% static 'image/foodd3.jpg' %}" class="d-block w-100" alt="Slide 6" ></div>
 
 
       </div>
@@ -259,9 +116,9 @@
     <!-- Second Row of Images -->
     <div class="carousel-item">
       <div class="row">
-        <div class="col"><img src="{% static 'image/blood4.jpg' %}" class="d-block w-100" alt="Slide 4" ></div>
-        <div class="col"><img src="{% static 'image/blood5.jpg' %}" class="d-block w-100" alt="Slide 5" ></div>
-        <div class="col"><img src="{% static 'image/blood6.jpg' %}" class="d-block w-100" alt="Slide 6" ></div>
+        <div class="col"><img src="{% static 'image/foodd4.jpg' %}" class="d-block w-100" alt="Slide 4" ></div>
+        <div class="col"><img src="{% static 'image/foodd8.jpg' %}" class="d-block w-100" alt="Slide 5" ></div>
+        <div class="col"><img src="{% static 'image/foodd6.jpg' %}" class="d-block w-100" alt="Slide 6" ></div>
       </div>
     </div>
     <!-- Third Row of Images -->
@@ -284,6 +141,7 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+
 
  <footer class="bg-body-tertiary text-center text-lg-start">
   <!-- Grid container -->

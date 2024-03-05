@@ -55,6 +55,14 @@
                       <label class="form-label" for="form3Example4cd">Password</label>
                     </div>
                   </div>
+                     {% if error_messages %}
+
+        {% for message in error_messages %}
+            {{ message }}
+        {% endfor %}
+
+{% endif %}
+
 
 <!--                  <div class="form-check d-flex justify-content-center mb-5">-->
 <!--                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" >-->
@@ -66,14 +74,18 @@
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                     <button type="submit" class="btn btn-primary btn-lg">Register</button>
                   </div>
+                 DO YOU ALREADY HAVE AN ACCOUNT <a href="/login/">Login Now</a>
 
                 </form>
 
               </div>
               <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
 
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
-                  class="img-fluid" alt="Sample image">
+<!--                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"-->
+<!--                  class="img-fluid" alt="Sample image">-->
+                <img src="{% static 'image/coversign.png' %}" alt="Sample image" height="550px" width="100%">
+
+
 
               </div>
             </div>

@@ -25,134 +25,59 @@
 
   <nav class="navbar navbar-expand-lg navbar-light bg-white">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">TheCare</a>
+     <a class="navbar-brand" href="#">
+      <img src="{% static 'image/logoo.avif' %}" alt="Navbar Logo" height="30" class="d-inline-block align-text-top">
+      TheCare
+    </a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-        <li class="nav-item  me-5">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        <li class="nav-item  ">
+          <a class="nav-link active" aria-current="page" href="#" style="color: green;">Home</a>
         </li>
-        <li class="nav-item  me-5">
+        <li class="nav-item  ">
           <a class="nav-link" href="/driver">Driver</a>
         </li>
-        <li class="nav-item  me-5">
+        <li class="nav-item  ">
           <a class="nav-link" href="/hospital">Hospital</a>
         </li>
-          <li class="nav-item  me-5">
+          <li class="nav-item ">
           <a class="nav-link" href="/camp">Camp</a>
         </li>
-<!--        <li class="nav-item dropdown">-->
-<!--          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
-<!--            Dropdown link-->
-<!--          </a>-->
-<!--          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">-->
-<!--            <li><a class="dropdown-item" href="#">Action</a></li>-->
-<!--            <li><a class="dropdown-item" href="#">Another action</a></li>-->
-<!--            <li><a class="dropdown-item" href="#">Something else here</a></li>-->
-<!--          </ul>-->
-<!--        </li>-->
+          <li class="nav-item ">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Donation
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="blood">Blood Donation</a></li>
+            <li><a class="dropdown-item" href="#">Food Donation</a></li>
+            <li><a class="dropdown-item" href="#">Money Donation</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
-
-
-      <form method="POST" class="search" >
-     {% csrf_token %}
-     <input type="text" name="city" placeholder="city">
-     <button type="submit" class="btn btn-primary">SEARCH</button>
- </form>
   </div>
+
+
 
 </nav>
 
 
-
-<!-- <BR>-->
-
-<!--<div class="container">-->
-<!--<div class="row row-cols-1 row-cols-md-3 g-4">-->
-<!--  {% for x in data %}-->
-<!--    <h4 class="text-center">Driver Details</h4>-->
-<!--  <div class="col">-->
-<!--    <div class="card">-->
-
-
-<!--      <img src="../media/{{ x.images }}" class="card-img-top" >-->
-
-
-<!--      <div class="card-body">-->
-<!--        <h5 class="card-title">{{x.Driver_name}}</h5>-->
-<!--        <p class="card-text">{{x.Hospital_name}}</p>-->
-<!--        <p class="card-text">{{x.Contact_no}}</p>-->
-
-
-
-
-
-
-
-
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  <br>-->
-<!--  <br>-->
-<!-- {% endfor %}-->
-<!--  <br><br>-->
-
-<!--  </div>-->
-<!--</div>-->
-
-
-<!-- <footer class="bg-body-tertiary text-center text-lg-start">-->
-<!--  &lt;!&ndash; Grid container &ndash;&gt;-->
-<!--  <div class="container p-4">-->
-<!--    &lt;!&ndash;Grid row&ndash;&gt;-->
-<!--    <div class="row">-->
-<!--      &lt;!&ndash;Grid column&ndash;&gt;-->
-<!--      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">-->
-<!--        <h5 class="text-uppercase">Footer text</h5>-->
-
-<!--        <p>-->
-<!--          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis-->
-<!--          molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam-->
-<!--          voluptatem veniam, est atque cumque eum delectus sint!-->
-<!--        </p>-->
-<!--      </div>-->
-<!--      &lt;!&ndash;Grid column&ndash;&gt;-->
-
-<!--      &lt;!&ndash;Grid column&ndash;&gt;-->
-<!--      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">-->
-<!--        <h5 class="text-uppercase">Footer text</h5>-->
-
-<!--        <p>-->
-<!--          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis-->
-<!--          molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam-->
-<!--          voluptatem veniam, est atque cumque eum delectus sint!-->
-<!--        </p>-->
-<!--      </div>-->
-<!--      &lt;!&ndash;Grid column&ndash;&gt;-->
-<!--    </div>-->
-<!--    &lt;!&ndash;Grid row&ndash;&gt;-->
-<!--  </div>-->
-<!--  &lt;!&ndash; Grid container &ndash;&gt;-->
-
-<!--  &lt;!&ndash; Copyright &ndash;&gt;-->
-<!--  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">-->
-<!--    © 2020 Copyright:-->
-<!--    <a class="text-body" href="https://mdbootstrap.com/">MDBootstrap.com</a>-->
-<!--  </div>-->
-<!--  &lt;!&ndash; Copyright &ndash;&gt;-->
-<!--</footer>-->
-
   <div class="position-relative">
-  <img src="{% static 'image/service.jpg' %}"  alt="Image" height="600px" width="100%">
+  <img src="{% static 'image/coveramb.jpeg' %}"  alt="Image" height="500px" width="100%">
   <div class="position-absolute bottom-50 start-20  translate-left">
 
   </div>
 </div>
-<h4 class="text-center">THE CARE AMBULANCE SERVICE</h4>
+  <br>
+<h3 class="text-center" style="color:green;">THE CARE AMBULANCE SERVICE</h3>
   <br>
 
 
@@ -167,14 +92,23 @@
 
     </div>
     <div class="col-md-6">
-      <h6>Emergency response is the most critical to the lifeline of any country. Through TheCare website you can find nearest  ambulance drivers in your city and contact information of each drivers are avialable.In emergency sitution you can call them for help.All are owned by hospital With an increasing emphasis on promoting independent living today, having access to the nearest ambulance to you can provide much needed peace of mind in a worst case scenario.
+      <h4 style="color:red;">Emergency response is the most critical to the lifeline of any country. Through TheCare website you can find nearest  ambulance drivers in your city and contact information of each drivers are avialable.In emergency sitution you can call them for help.All are owned by hospital With an increasing emphasis on promoting independent living today, having access to the nearest ambulance to you can provide much needed peace of mind in a worst case scenario.
 
-</h6>
+</h4>
        </div>
   </div>
 </div>
       <br><br>
-
+<div class="container mt-3 mb-3">
+  <form method="POST">
+    {% csrf_token %}
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search city name" aria-label="Recipient's username" aria-describedby="button-addon2" name="city">
+      <button class="btn btn-outline-success btn-sm" type="submit" id="button-addon2"><i class="fas fa-search"></i> Search</button>
+    </div>
+    </form>
+  </div>
+<br><br>
  <div class="container">
 <div class="row row-cols-1 row-cols-md-3 g-4">
   {% for x in data %}
@@ -186,7 +120,7 @@
 
 
       <div class="card-body">
-        <h5 class="card-title">{{x.Driver_name}}</h5>
+        <h5 class="card-title" style="color:red;">{{x.Driver_name}}</h5>
         <p class="card-text">{{x.Hospital_name}}</p>
         <p class="card-text">{{x.Contact_no}}</p>
 

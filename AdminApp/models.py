@@ -115,6 +115,8 @@ class Hospitalreg(models.Model):
     Age = models.IntegerField()
     Place = models.CharField(max_length=60)
     Phone = models.CharField(max_length=50,null=True)
+    Date =models.CharField(max_length=80,null=True)
+    Token =models.IntegerField(null=True)
     Doctor_id = models.ForeignKey(DoctorModel, on_delete=models.CASCADE)
 
     def __str__(self):

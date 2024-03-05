@@ -45,26 +45,48 @@
     </div>
   </div>
 </nav>
- <BR>
 
- <BR>
- <h1 class="text-center">Doctordetails</h1>
+  <div class="position-relative cover-container">
+  <!-- This is an image tag with a source pointing to a static file -->
+  <img src="{% static 'image/doctor2.avif' %}" alt="Image"  width="100%" height="500px">
+  <!-- This div contains a quote positioned absolutely at the bottom and center of the image -->
+  <div class="position-absolute bottom-50 start-60 translate-left">
+    <!-- This is the quote inside an <h4> element -->
+    <h6  style="width:60% ">MEDICINES CAN CURE DISEASES, BUT ONLY DOCTORS CAN CURE PATIENTS."
+    </h6>
+  </div>
+</div>
+ <br><br>
+<div class="container mt-3 mb-3">
+  <form method="POST">
+    {% csrf_token %}
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search city name" aria-label="Recipient's username" aria-describedby="button-addon2" name="cityname">
+      <button class="btn btn-outline-success btn-sm" type="submit" id="button-addon2"><i class="fas fa-search"></i> Search</button>
+    </div>
+    </form>
+  </div>
+ <br><br>
 <div class="container">
 <div class="row row-cols-1 row-cols-md-3 g-4">
   {% for x in data %}
+
   <div class="col">
     <div class="card">
 
 
-      <img src="../media/{{ x.images }}" class="card-img-top" >
+      <img src="../media/{{ x.images }}" class="card-img-top" height="400px">
 
 
       <div class="card-body">
-        <h5 class="card-title">{{x.Doctor_name}}</h5>
-        <p class="card-text">{{x.Department_name}}</p>
-        <p class="card-text">{{x.Contact_no}}</p>
+        <h5 class="card-title" style="color:red;">DR {{x.Doctor_name}}</h5>
+        <p class="card-text"> Department :{{x.Department_name}}</p>
+        <p class="card-text">Duty Start time:{{x.Start_time}}</p>
+        <p class="card-text">Duty End time :{{x.End_time}}</p>
 
-        <a href="/bookdoctor/{{x.Doctor_id}}">Book</a>
+
+
+        <a href="/bookdoctor/{{x.Doctor_id}}" class="btn btn-success">Book</a>
 
 
 

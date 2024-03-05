@@ -9,6 +9,8 @@ admin.site.register(DonationCategoryModel)
 admin.site.register(FoodModel)
 admin.site.register(PatientModel)
 admin.site.register(BloodDonationModel)
+admin.site.register(Fooddonationreg)
+
 
 
 

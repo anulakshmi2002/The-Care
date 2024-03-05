@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'Care.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':'mycare',
+        'NAME':'thecare',
         'HOST':'localhost',
         'PASSWORD':'abhirami',
         'USER':'root',

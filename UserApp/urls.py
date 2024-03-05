@@ -19,10 +19,13 @@ urlpatterns=[
     path('hospital_sign', views.hospitalsign, name="hospitalsignup"),
     # path('hospitalhome/',views.hospitalhome,name="hospitalhome"),
     # path('hosview',views.hospitalview),
-    path('doctorregi',views.doctorregi),
-    path('blood',views.blooddonation),
-    path('donar',views.donar),
-    path('fooddonor/',views.fooddonar),
+    path('doctorregi',views.doctorregi,name="doctorregi"),
+    path('blood/',views.blooddonation,name="blood"),
+    path('donor',views.donar,name="donor"),
+    path('fooddonor/',views.fooddonar,name="fooddonor"),
+    path('foodreg/<int:id>',views.fooddonationreg,name="foodreg"),
+    path('viewprofile',views.profile,name="viewprofile"),
+
 
 
 ]
