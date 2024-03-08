@@ -17,7 +17,7 @@ urlpatterns=[
     path('bookdoctor/<int:id>',views.bookdoctor,name="bookdoctor"),
      path('hospital_login',views.hospitallogin,name="hospitallogin"),
     path('hospital_sign', views.hospitalsign, name="hospitalsignup"),
-    # path('hospitalhome/',views.hospitalhome,name="hospitalhome"),
+     path('hospitalhome/',views.hospitalhom,name="hospitalhome"),
     # path('hosview',views.hospitalview),
     path('doctorregi',views.doctorregi,name="doctorregi"),
     path('blood/',views.blooddonation,name="blood"),

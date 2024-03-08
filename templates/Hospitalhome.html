@@ -1,10 +1,73 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    .sidebar {
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: green; /* Bootstrap's dark theme background color */
+      padding-top: 20px;
+    }
+    .sidebar a {
+      padding: 10px 15px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      color: white;
+      display: block;
+    }
+    .sidebar a:hover {
+      background-color: #495057; /* Bootstrap's dark theme hover background color */
+    }
+    .dashboard-icon {
+      font-size: 1.5rem;
+      color: red;
+      margin-right: 10px;
+    }
+  </style>
 </head>
 <body>
-<h1>hey user</h1>
+
+<div class="sidebar">
+  <a href="#">
+    <i class="bi bi-person-circle dashboard-icon"></i>
+    Profile
+  </a>
+  <a href="/doctorregi">
+    <i class="bi bi-person-badge-fill dashboard-icon"></i>
+    Doctor
+  </a>
+  <a href="#">
+    <i class="bi bi-people-fill dashboard-icon"></i>
+    Patient
+  </a>
+  <a href="#">
+    <i class="bi bi-person-bounding-box dashboard-icon"></i>
+    Driver
+  </a>
+</div>
+
+<!-- Page content -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <!-- Your content here -->
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

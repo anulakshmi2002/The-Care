@@ -207,7 +207,7 @@ def hospitallogin(request):
 
             request.session['mydata'] = hospitalname
 
-            return redirect('hospitalsignup')
+            return redirect('/')
         else:
             return HttpResponse('Please enter valid Username or Password.')
 
@@ -360,16 +360,26 @@ def profile(request):
     else:
         return redirect('/login')
 
-# def editprofile(request):
-#     if 'user' in request.session:
-#         print(request.session["user"])
-#         username = request.session["user"]
-#         dataa = UserModel.objects.filter(Username=username)
-#         image = UserImageModel.objects.filter(User_id=UserModel.objects.get(Username=username)).first()
-#
-#
-#         print(dataa.values())
-#
-#         return render(request, "editprofile.html", {'profile': dataa, 'image': image})
-#     return render(request,'editprofile.html')
+def editprofile(request):
+    if 'user' in request.session:
+        print(request.session["user"])
+        username = request.session["user"]
+        dataa = UserModel.objects.filter(Username=username)
+        image = UserImageModel.objects.filter(User_id=UserModel.objects.get(Username=username)).first()
 
+
+        print(dataa.values())
+
+        return render(request, "editprofile.html", {'profile': dataa, 'image': image})
+    return render(request,'editprofile.html')
+
+def hospitalhom(request):
+    return render(request,'Hospitalhome.html')
+
+def viewdoctor(request):
+    if 'mydata' in request.session:
+        print(request.session["mydata"])
+        username = request.session["mydata"]
+        dataa = DoctorModel.objects.filter(Hospital_id=HospitalModel.objects.get(Hospital_Name=username))
+
+    return render(request,"Doctorview.html")
